@@ -1,0 +1,42 @@
+version: '3.9'
+
+x-app: &app
+  env_file:
+    - .env
+
+services:
+  app:
+    <<: *app
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "5173:5173" # Vite
+      - "3001:3001" # Express
+    # volumes:
+    #   - ./:/app
+      # - ./app/backend:/backend
+      # - ./app/frontend:/frontend
+      # - ./:/app
+      # - /app/vite-react-app/ # exclude mount for "npm install"
+    depends_on:
+      - db
+    environment:
+      - DATABASE_URL=postgresql://user:password@db:5432/tododb
+    stdin_open: true
+    tty: true
+
+  db:
+    image: postgres:15
+    restart: always
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+      POSTGRES_DB: ${POSTGRES_DB}
+    volumes:
+      - data:/var/lib/postgresql/data
+
+volumes:
+  data:
