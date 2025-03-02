@@ -14,9 +14,9 @@ services:
       - "5173:5173" # Vite
       - "3001:3001" # Express
     # volumes:
-    #   - ./:/app
-      # - ./app/backend:/backend
-      # - ./app/frontend:/frontend
+      # - ./:/app
+      # - ./app/backend/:/app
+      # - ./app/frontend/:/app
       # - ./:/app
       # - /app/vite-react-app/ # exclude mount for "npm install"
     depends_on:

@@ -15,13 +15,13 @@ RUN mkdir /backend
 ##########
 WORKDIR /app/backend
 
+COPY ./app/backend ./
+
 # # 依存関係をインストール
-# RUN npm install yarn
+RUN npm install yarn
 
 RUN npm install express cors @prisma/client
 RUN npm install -D typescript ts-node nodemon @types/node @types/express
-
-# COPY ../app/backend .
 
 ##########
 # frontend
@@ -30,10 +30,14 @@ WORKDIR /app
 
 RUN npx create-vite@latest frontend --template react-ts
 
-# Viteサーバーを起動するポートを公開
-EXPOSE 5173 3001
+WORKDIR /app/frontend
 
-# COPY ../app/frontend .
+COPY ./app/frontend/ ./
+
+# Viteサーバーを起動するポートを公開
+# EXPOSE 5173 3001
+
+
 
 # USER node
 # # 開発サーバーを起動

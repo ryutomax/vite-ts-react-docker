@@ -6,6 +6,8 @@ type Task = {
   completed: boolean;
 };
 
+
+
 function App() {
   const [tasks, setTasks] = useState<Task[]>([]);
   const [taskText, setTaskText] = useState("");
