@@ -5,6 +5,11 @@ RUN apt-get update && apt-get install -y \
     zsh postgresql-client \
     && rm -rf /var/lib/apt/lists/*
 
+
+COPY entrypoint.sh /usr/local/bin/entrypoint.sh
+RUN chmod +x /usr/local/bin/entrypoint.sh
+ENTRYPOINT ["sh", "/usr/local/bin/entrypoint.sh"]
+
 # 作業ディレクトリを設定
 # WORKDIR /app
 
