@@ -2,7 +2,7 @@
   "name": "todo-dev",
   "service": "app",
   "dockerComposeFile": "./docker-compose.yml",
-  "workspaceFolder": "/app",
+  "workspaceFolder": "/workspace",
   "forwardPorts": [5173],
   "customizations": {
     "settings": {
@@ -18,5 +18,5 @@
       ]
     }
   },
-  "postCreateCommand": "cd backend/ && npm run dev"
+  "postCreateCommand": "cd app/frontend && vite --host 0.0.0.0"
 }
