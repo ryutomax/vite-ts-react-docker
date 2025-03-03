@@ -12,7 +12,7 @@ fi
 # frontend
 if [ ! -f "/workspace/app/frontend/package.json" ]; then
   echo "Creating frontend project..."
-  cd /workspace/app
+  cd /workspace
   npx create-vite@latest frontend --template react-ts
   cp -r frontend/* /workspace/app/frontend/
   rm -rf frontend  # 一時的なディレクトリを削除

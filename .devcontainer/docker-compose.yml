@@ -16,8 +16,8 @@ services:
     volumes:
       - ../:/workspace
       # - ./:/app
-      - /app/backend/node_modules # exclude mount for "npm install"
-      - /app/frontend/node_modules # exclude mount for "npm install"
+      - /workspace/app/backend/node_modules # exclude mount for "npm install"
+      - /workspace/app/frontend/node_modules # exclude mount for "npm install"
     depends_on:
       - db
     environment:
