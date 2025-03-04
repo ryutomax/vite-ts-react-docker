@@ -15,4 +15,4 @@ ENTRYPOINT ["/usr/local/bin/entrypoint.sh"]
 # 次の処理へ
 CMD ["/bin/bash"]
 
-EXPOSE 5173
+# EXPOSE 5173
