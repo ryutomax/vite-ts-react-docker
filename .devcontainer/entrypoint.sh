@@ -13,13 +13,16 @@ fi
 if [ ! -f "/workspace/app/frontend/package.json" ]; then
   echo "Creating frontend project..."
   cd /workspace
-  npx create-vite@latest frontend --template react-ts
-  cp -r frontend/* /workspace/app/frontend/
-  rm -rf frontend  # 一時的なディレクトリを削除
+  yes | npx create-vite@latest frontend --template react-ts
+  cp -r /workspace/frontend/* /workspace/app/frontend/
+  rm -rf /workspace/frontend  # 一時的なディレクトリを削除
+
+  cd /workspace/app/frontend
+  npm install yarn
+  yarn install
 fi
 
-cd /workspace/app/frontend
-npm install yarn
-yarn install
+echo "Finished setting up project."
 
+echo "$@"
 exec "$@"

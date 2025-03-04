@@ -15,9 +15,8 @@ services:
       - "3001:3001" # Express
     volumes:
       - ../:/workspace
-      # - ./:/app
-      - /workspace/app/backend/node_modules # exclude mount for "npm install"
-      - /workspace/app/frontend/node_modules # exclude mount for "npm install"
+      # - /workspace/app/backend/node_modules # exclude mount for "npm install"
+      # - /workspace/app/frontend/node_modules # exclude mount for "npm install"
     depends_on:
       - db
     environment:

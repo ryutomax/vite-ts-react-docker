@@ -26,6 +26,13 @@ cd app/frontend
 npm install yarn
 yarn install
 
+### /workspace/app/frontend/vite.config.ts
+```
+  server: {
+    host: "0.0.0.0",
+    port: 5173
+  }
+```
 yarn dev
 
 
