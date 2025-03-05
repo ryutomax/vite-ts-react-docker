@@ -17,6 +17,6 @@
         "ms-azuretools.vscode-docker"
       ]
     }
-  },
-  "postCreateCommand": "cd app/frontend && yarn dev"
+  }
+  // "postCreateCommand": "cd app/frontend && yarn dev"
 }

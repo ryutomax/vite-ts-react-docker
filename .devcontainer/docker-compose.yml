@@ -13,10 +13,11 @@ services:
     ports:
       - "5173:5173" # Vite
       - "3001:3001" # Express
+      - "9229:9229"
     volumes:
       - ../:/workspace
-      # - /workspace/app/backend/node_modules # exclude mount for "npm install"
-      # - /workspace/app/frontend/node_modules # exclude mount for "npm install"
+      - /workspace/app/backend/node_modules # exclude mount for "npm install"
+      - /workspace/app/frontend/node_modules # exclude mount for "npm install"
     depends_on:
       - db
     environment:

@@ -11,7 +11,7 @@ if [ ! -f "/workspace/app/backend/package.json" ]; then
   yes | npx prisma migrate dev --name init
 
   # add cmd to scripts in /workspace/app/backend/package.json
-  sed -i '1s|{|{\n  "scripts": {\n    "dev": "nodemon src/server.ts"\n  },|' /workspace/app/backend/package.json
+  sed -i '1s|{|{\n  "scripts": {\n    "dev": "nodemon ./src/server.ts"\n  },|' /workspace/app/backend/package.json
 fi
 
 # frontend
