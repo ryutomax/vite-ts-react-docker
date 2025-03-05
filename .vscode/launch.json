@@ -24,7 +24,7 @@
       "port": 9229,
       "timeout": 10000,
       "sourceMaps": true,
-      "outFiles": ["${workspaceFolder}/app/backend/dist/**/*.js"],
+      // "outFiles": ["${workspaceFolder}/app/backend/dist/**/*.js"],
       "cwd": "${workspaceFolder}/app/backend/"
     }
   ]
