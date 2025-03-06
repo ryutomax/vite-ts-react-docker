@@ -1,6 +1,8 @@
 #!/bin/sh
 
+################
 # backend
+################
 echo "Creating backend project..."
 cd /workspace/app/backend
 
@@ -23,10 +25,12 @@ if [ -z "$(ls -A /workspace/app/backend/node_modules 2>/dev/null)" ]; then
   yes | npx prisma migrate dev --name init
 fi
 
+################
 # frontend
+################
+echo "Creating frontend project..."
+
 if [ ! -f "/workspace/app/frontend/package.json" ]; then
-  echo "Creating frontend project..."
-  
   cd /workspace
   yes | npx create-vite@latest frontend --template react-ts
   cp -r /workspace/frontend/* /workspace/app/frontend/ # 中身だけをコピー

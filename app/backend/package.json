@@ -1,6 +1,6 @@
 {
   "scripts": {
-    "dev": "npx tsc && nodemon"
+    "dev": "nodemon --legacy-watch"
   },
   "dependencies": {
     "@prisma/client": "^6.4.1",
