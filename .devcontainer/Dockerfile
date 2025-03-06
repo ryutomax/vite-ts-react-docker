@@ -13,6 +13,6 @@ RUN sed -i 's/\r$//' ./entrypoint.sh
 ENTRYPOINT ["/usr/local/bin/entrypoint.sh"]
 
 # 次の処理へ
-CMD ["/bin/bash"]
+CMD ["sleep", "infinity"]
 
 # EXPOSE 5173
